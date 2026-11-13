@@ -13,7 +13,7 @@ namespace b3_chuchinhnguyen.Controllers
                 Name = "Product 1",
                 Price = 100000,
                 Description = "Mô tả sản phẩm 1",
-                CategoryID = 1
+                CategoryName = "Category 1"
             },
             new Product
             {
@@ -21,7 +21,7 @@ namespace b3_chuchinhnguyen.Controllers
                 Name = "Product 2",
                 Price = 200000,
                 Description = "Mô tả sản phẩm 2",
-                CategoryID = 2
+                CategoryName = "Category 2"
             }
         };
 
@@ -86,7 +86,7 @@ namespace b3_chuchinhnguyen.Controllers
             existingProduct.Name = product.Name;
             existingProduct.Price = product.Price;
             existingProduct.Description = product.Description;
-            existingProduct.CategoryID = product.CategoryID;
+            existingProduct.CategoryName = product.CategoryName;
 
             return RedirectToAction(nameof(Index));
         }

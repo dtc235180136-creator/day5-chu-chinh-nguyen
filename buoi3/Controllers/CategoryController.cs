@@ -24,7 +24,7 @@ namespace b3_chuchinhnguyen.Controllers
         public ActionResult Details(int id)
         {
             var category = _categories.FirstOrDefault(c => c.ID == id);
-            if(category == null)
+            if (category == null)
             {
                 return NotFound();
             }
@@ -42,7 +42,7 @@ namespace b3_chuchinhnguyen.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(category category)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(category);
             }
@@ -69,35 +69,37 @@ namespace b3_chuchinhnguyen.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
         {
-            try
+            var category = _categories.FirstOrDefault(c => c.ID == id);
+            if (category == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
+            return View(category);
         }
-
         // GET: CategeryController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var category = _categories.FirstOrDefault(c => c.ID == id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
         }
 
         // POST: CategeryController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult DeletteConfirmed(int id)
         {
-            try
+            var category = _categories.FirstOrDefault(c => c.ID == id);
+            if (category == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
+            _categories.Remove(category);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
+

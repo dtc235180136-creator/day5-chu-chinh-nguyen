@@ -15,8 +15,8 @@
     <dd class="col-sm-9">@Model.Price.ToString("N0")</dd>
     <dt class="col-sm-3">Mô tả</dt>
     <dd class="col-sm-9">@Model.Description</dd>
-    <dt class="col-sm-3">Category ID</dt>
-    <dd class="col-sm-9">@Model.CategoryID</dd>
+    <dt class="col-sm-3">Tên category</dt>
+    <dd class="col-sm-9">@Model.CategoryName</dd>
 </dl>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary">Sửa</a>

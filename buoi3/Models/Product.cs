@@ -6,9 +6,6 @@
         public String Name { get; set; }
         public decimal Price { get; set; }
         public String Description { get; set; } = string.Empty;
-        // Foreign key to Category
-        public int CategoryID { get; set; }
-        // Navigation property to Category
-        public category? category { get; set; }
+        public String CategoryName { get; set; } = string.Empty;
     }
 }
